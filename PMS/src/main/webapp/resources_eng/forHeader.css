@@ -1,0 +1,372 @@
+@charset "UTF-8";
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Myeongjo:wght@700&display=swap')
+	;
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Jua', sans-serif;
+}
+
+body {
+	display: grid;
+	grid-template-rows: 100px auto 100px;
+	grid-template-areas: "header" "section" "footer";
+	margin: 0 auto;
+}
+
+h3 {
+	padding-left: 20px;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 60vw;
+	margin: 0 auto;
+}
+
+header>div>div>a>img {
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+}
+
+header>div:first-child>div {
+	display: flex;
+	align-items: center;
+}
+
+header>div:last-child>div {
+	display: flex;
+}
+
+section>div:first-child {
+	display: flex;
+	height: 100%;
+}
+
+header>div:last-child>div>a {
+	padding: 20px;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background-color: whitesmoke;
+	padding-left: 20%;
+	padding-right: 20%;
+	font-size: 0.8em;
+	height: fit-content;
+	min-height: 100px;
+}
+
+footer>div:first-child {
+	color: gray;
+}
+
+footer>div:last-child {
+	display: flex;
+}
+
+footer>div:last-child>a {
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+footer>div:last-child>a:not(:last-child) {
+	border-right: 1px solid gray;
+}
+
+section {
+	display: grid;
+	grid-template-rows: 200px auto;
+	grid-template-areas: "aside" "article";
+	min-height: 900px;
+}
+
+section>aside {
+	background-image: url(../resources/img/mainpageIMG.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 20%;
+}
+
+section>aside>div>h1 {
+	font-size: 3em;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: fit-content;
+	border-radius: 8px;
+	padding: 10px 10px;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: gray;
+}
+
+#section-form {
+	width: 60vw;
+	margin: 0 auto;
+	text-align: center;
+	height: 90%;
+	padding-top: 60px;
+	background-color: #FFFEFB;
+	padding-bottom: 60px;
+}
+
+#section-form>div:first-child {
+	padding-bottom: 30px;
+}
+
+#regist-form {
+	border-bottom: 1px solid gray;
+	border-right: 1px solid gray;
+	border-left: 1px solid gray;
+	width: 50%;
+	height: 100%;
+	padding-top: 5%;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+#box-interface {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: fit-content;
+}
+
+#select-menu {
+	display: flex;
+	justify-content: center;
+	width: 50%;
+	border-right: 1px solid gray;
+	border-left: 1px solid gray;
+	border-top: 1px solid gray;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+#select-menu>div {
+	width: 100%;
+	font-size: 1em;
+	height: fit-content;
+	min-height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.form-size {
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form>div {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+}
+
+.form-size>div:not(form>div:last-child) {
+	padding-bottom: 30px;
+}
+
+#unselected {
+	border-bottom: 1px solid gray;
+}
+
+#selected {
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-right: 1px solid gray;
+	border-left: 1px solid gray;
+}
+
+#selected>a {
+	color: #006BFD;
+}
+
+#unselected>a {
+	color: black;
+}
+
+#final {
+	padding: 10px 30%;
+	border-radius: 8px;
+	background-color: #006BFD;
+	border: 1px solid #006BFD;
+	color: white;
+	font-size: 1.3em;
+	cursor: pointer;
+}
+
+form>div>p {
+	text-align: left;
+	padding-bottom: 5px;
+}
+
+#userId, #userPassword, #userName, #userPhone, #userAccount, #userPassword2, #clientId,  #clientPassword, #clientName, #clientPhone, #clientAccount, #clientNumber, #checkPassword {
+	width: 100%;
+	height: 30px;
+}
+
+#searchBooking {
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+	color: white;
+}
+
+#search-booking-form {
+	width: 100%;
+}
+
+#search-booking-form>div {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	width: 100%;
+	height: 50px;
+}
+
+#search-booking-form>div:nth-child(7), #searchBooking>div:nth-child(1) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#search-booking-form>div {
+	border-bottom: 1px solid white;
+}
+
+#search-booking-form>div>div {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	width: 100%;
+	padding-left: 30px;
+}
+
+#search-booking-form>div>div:last-child {
+	display: flex;
+	flex-direction: row;
+}
+
+#search-booking-form>div {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	align-items: center;
+	width: 100%;
+}
+
+#search-booking-form>div>div:last-child>label {
+	padding-left: 5px;
+}
+
+#search-box {
+	display: flex;
+	height: 50px;
+	width: 40%;
+	align-items: center;
+	justify-content: space-around;
+}
+
+#search-box>a {
+	padding: 0 20px;
+}
+
+.no-style {
+	border: none;
+	background-color: transparent;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+	color: gray;
+}
+
+.no-style:hover{
+	color: #578DD5;
+}
+
+#search-big-box {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#search-box-line {
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+}
+
+#search-div2 {
+	text-align: left;
+	padding-top: 100px;
+}
+
+#search-div2>div:first-child {
+	padding-bottom: 20px;
+}
+
+#search-div2>div:last-child {
+	background-color: #23527c;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	color: white;
+}
+
+#search-div2>div:last-child>div {
+	padding-left: 30px;
+}
+
+#search-booking-form>div>div:first-child {
+	border-right: 1px solid white;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+#search-booking-form>div>div>input{
+	padding:10px 0px;
+}
+#search-booking-form>div {
+	background-color: #23527c;
+	}
+
+#search-booking-form>div {
+	width: 100%;
+}
+
+#final-serachBooking {
+	padding: 10px 10px;
+	background-color: white;
+	border: none;
+	border-radius:8px;
+	cursor: pointer;
+}
+#final-serachBooking:hover{
+	color: #006BFD;
+}

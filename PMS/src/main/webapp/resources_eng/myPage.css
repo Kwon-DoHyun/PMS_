@@ -1,0 +1,315 @@
+@charset "UTF-8";
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Myeongjo:wght@700&display=swap')
+	;
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Jua', sans-serif;
+}
+
+body {
+	display: grid;
+	grid-template-rows: 100px 1fr 100px;
+	grid-template-areas: "header" "section" "footer";
+	margin: 0 auto;
+}
+
+h3 {
+	padding-left: 20px;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 60vw;
+	margin: 0 auto;
+}
+
+header>div>div>a>img {
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+}
+
+header>div:first-child>div {
+	display: flex;
+	align-items: center;
+}
+
+header>div:last-child>div {
+	display: flex;
+}
+
+section>div:first-child {
+	display: flex;
+	height: 100%;
+}
+
+header>div:last-child>div>a {
+	padding: 20px;
+}
+
+footer {
+	grid-area: footer;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background-color: whitesmoke;
+	padding-left: 20%;
+	padding-right: 20%;
+	margin-top: 15%;
+	font-size: 0.8em;
+	height: fit-content;
+	min-height: 100px;
+}
+
+footer>div:first-child {
+	color: gray;
+}
+
+footer>div:last-child {
+	display: flex;
+}
+
+footer>div:last-child>a {
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+footer>div:last-child>a:not(:last-child) {
+	border-right: 1px solid gray;
+}
+
+section {
+	display: grid;
+	grid-template-rows: auto 1fr;
+	grid-template-areas: "aside" "article";
+}
+
+section>aside {
+	background-image: url(../resources/img/mainpageIMG.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 20%;
+}
+
+section>div {
+	margin: 0 auto;
+	width: 80vw;
+	text-align: center;
+	height: fit-content;
+	padding-top: 60px;
+	border-top: 1px solid gray;
+}
+
+#bookingInform {
+	width: 85vw;
+}
+
+section>aside>div>h1 {
+	font-size: 3em;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: fit-content;
+	border-radius: 8px;
+	padding: 10px 10px;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: gray;
+}
+
+#myPage-form {
+	display: flex;
+	flex-direction: column;
+}
+
+#myPage-form>div>h2 {
+	color: #006BFD;
+}
+
+#myPage-menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	border-right: 1px solid gray;
+	border-left: 1px solid gray;
+	border-top: 1px solid gray;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	width: 100%;
+	border-top-right-radius: 8px;
+	height: 50px;
+	align-items: center;
+}
+
+#myPage-menu>div {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2em;
+}
+
+#myPage-content {
+	display: flex;
+	padding-top: 30px;
+	justify-content: space-evenly;
+	border-right: 1px solid gray;
+	border-left: 1px solid gray;
+	border-bottom: 1px solid gray;
+	flex-direction: column;
+}
+
+#myPage-table, #form {
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+}
+
+#unselected {
+	border-bottom: 1px solid gray;
+	width: 100%;
+}
+
+#selected {
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-right: 1px solid gray;
+	border-left: 1px solid gray;
+	width: 100%;
+}
+
+#selected>a {
+	color: #006BFD;
+}
+
+#unselected>a {
+	color: black;
+}
+
+#myPage-thead {
+	background-color: #23527c;
+	color: white;
+	height: fit-content;
+	font-size: 1.2em;
+	color: white;
+	text-align: center;
+}
+
+#myPage-tbody {
+	height: 100px;
+}
+
+#deleteBtn, #modifyBtn {
+	width: 100%;
+	border: 1px gray solid;
+}
+
+#modifyBtn>button, #as {
+	border-radius: 4px;
+	cursor: pointer;
+	border: none;
+	font-size: 1.1em;
+	color: gray;
+	height: 40px;
+	background-color: transparent;
+	border: none;
+	width: 100%;
+}
+
+#as:hover, #modifyBtn>button:hover {
+	background-color: #23527c;
+	color: white;
+}
+
+#btn-menu {
+	display: flex;
+}
+
+#btn-menu>div {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	margin-top: 30px;
+}
+
+#deleteBtn:hover, #modifyBtn:hover {
+	background-color: #23527c;
+}
+
+#deleteBtn>a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#bookingList>td {
+	height: 50px;
+}
+
+#bookingList {
+	border: 1px solid gray;
+}
+
+.status {
+	font-weight: bold;
+}
+
+.incomplete {
+	color: #FF8691;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	font-size: 1.3em;
+	cursor: pointer;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+.incomplete:hover {
+	background-color: #006BFD;
+	color: white;
+}
+
+.complete {
+	color: #006BFD;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	font-size: 1.3em;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+.disable {
+	background-color: #E6E6E6;
+}
+
+#credit-btn {
+	width: 70%;
+	height: 50%;
+	color: #006BFD;
+	background-color: white;
+	cursor: pointer;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+#credit-btn:hover {
+	color: white;
+	background-color: #006BFD;
+}

@@ -1,0 +1,286 @@
+@charset "UTF-8";
+
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Jua', sans-serif;
+}
+
+body {
+	display: grid;
+	grid-template-rows: 100px 1fr 100px;
+	grid-template-areas: "header" "section" "footer";
+	margin: 0 auto;
+}
+
+h3 {
+	padding-left: 20px;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 60vw;
+	margin: 0 auto;
+}
+
+header>div>div>a>img {
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+}
+
+header>div:first-child>div {
+	display: flex;
+	align-items: center;
+}
+
+header>div:last-child>div {
+	display: flex;
+}
+
+section>div:first-child {
+	display: flex;
+	height: 100%;
+}
+
+header>div:last-child>div>a {
+	padding: 20px;
+}
+
+footer {
+	grid-area: footer;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	background-color: whitesmoke;
+	padding-left: 20%;
+	padding-right: 20%;
+	margin-top: 20%;
+	font-size: 0.8em;
+	height: fit-content;
+	min-height: 100px;
+}
+
+footer>div:first-child {
+	color: gray;
+}
+
+footer>div:last-child {
+	display: flex;
+}
+
+footer>div:last-child>a {
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+footer>div:last-child>a:not(:last-child) {
+	border-right: 1px solid gray;
+}
+
+section {
+	display: grid;
+	grid-template-rows: auto 1fr;
+	grid-template-areas: "aside" "article";
+}
+
+section>aside {
+	background-image: url(../resources/img/mainpageIMG.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 20%;
+}
+
+section>div {
+	width: 60vw;
+	margin: 0 auto;
+	text-align: center;
+	height: fit-content;
+	padding-top: 60px;
+	border-top: 1px solid gray;
+}
+
+section>aside>div>h1 {
+	font-size: 3em;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: fit-content;
+	padding: 10px 10px;
+}
+
+section>div>div>h1 {
+	font-size: 2em;
+}
+
+section>div>div {
+	background-color: #FFFEFB;
+}
+
+section>div>div:not(section>div>div:first-child) {
+	padding-top: 15px;
+	padding-bottom: 35px;
+}
+
+section>div>div:first-child {
+	padding-bottom: 30px;
+}
+
+section>div>div:last-child {
+	border-bottom: 1px solid gray;
+	border-top: 1px solid gray;
+	height: 100%;
+}
+
+#privacy {
+	display: flex;
+	flex-direction: column;
+	font-size: 1.5em;
+	text-align: left;
+	justify-content: center;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: gray;
+}
+
+#information {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.5em;
+}
+
+#footer-menu-form {
+	height: 100%;
+}
+
+#notice {
+	display: flex;
+	flex-direction: column;
+}
+
+#notice-table {
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+}
+
+#notice-thead {
+	background-color: #23527c;
+	color: white;
+	height: fit-content;
+	font-size: 1.2em;
+	color: white;
+}
+
+#pageBtn {
+	padding: 0.4% 0.4%;
+	border: 1px solid gray;
+}
+
+#pageBtn:hover {
+	color: white;
+	background-color: #23527c;
+}
+
+#page-form {
+	padding-top: 20px;
+	border-top: 1px solid gray;
+}
+
+noticeDetail-tbody td {
+	width: 10%;
+}
+
+#board-menu {
+	display: flex;
+	justify-content: flex-end;
+	min-height: 30px;
+}
+
+#keyword {
+	padding: 0px 10px;
+	cursor: pointer;
+	border: 1px solid gray;
+	background-color: white;
+	height: 100%;
+}
+
+#keywordInput {
+	width: 70%;
+}
+
+#write-menu {
+	border: 1px solid gray;
+	background-color: white;
+	padding: 1px 10px;
+	color: black;
+	display: flex;
+	align-items: center;
+}
+
+#keyword:hover, #write-menu:hover {
+	color: #578DD5;
+	background-color: white;
+}
+
+#myForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#boardTitle {
+	width: 60%;
+	font-size: 1.2em;
+}
+
+#boardContents {
+	width: 60%;
+	height: 400px;
+	font-size: 1.2em;
+}
+
+#side-btn {
+	display: flex;
+	justify-content: flex-end;
+	background-color: white;
+}
+
+#side-btn>a {
+	padding: 5px 5px;
+	border: 1px solid gray;
+}
+
+#side-btn>a:hover {
+	color: #23527c;
+}
+
+#writeBtn {
+	padding-top: 30px;
+}
+
+#writeBtn>button {
+	padding: 5px 15px;
+	border: 1px solid gray;
+	cursor: pointer;
+	font-size: 1.1em;
+	color: gray;
+	background-color: white;
+}
+
+#writeBtn>button:hover {
+	color: #23527c;
+}

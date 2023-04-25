@@ -1,0 +1,157 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Myeongjo:wght@700&display=swap')
+	;
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Jua', sans-serif;
+}
+
+body {
+	display: grid;
+	grid-template-rows: 100px auto 100px;
+	grid-template-areas: "header" "section" "footer";
+	width: 90vw;
+	margin: 0 auto;
+}
+
+h3 {
+	padding-left: 20px;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header>div>div>a>img {
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+}
+
+header>div:first-child>div {
+	display: flex;
+	align-items: center;
+}
+
+header>div:last-child>div {
+	display: flex;
+}
+
+section>div:first-child {
+	display: flex;
+}
+
+header>div:last-child>div>a {
+	padding: 20px;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: fit-content;
+	min-height: 100px;
+}
+
+footer>div:first-child {
+	color: gray;
+}
+
+footer>div:last-child {
+	display: flex;
+}
+
+footer>div:last-child>a {
+	padding-right: 20px;
+	padding-left: 20px;
+	text-decoration: none;
+	color: gray;
+}
+
+footer>div:last-child>a:not(:last-child) {
+	border-right: 1px solid gray;
+}
+
+section {
+	background-image: url(../resources/img/mainpageIMG.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: flex;
+	padding-top: 200px;
+	padding-left: 10%;
+	flex-direction: column;
+	min-height: 700px;
+}
+
+span {
+	color: #006BFD;
+	font-size: 1.2em;
+}
+
+section>div {
+	height: fit-content;
+}
+
+section>div>h1:not(h1>span) {
+	color: white;
+	font-size: 4em;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: fit-content;
+	border-radius: 8px;
+	padding: 10px 10px;
+}
+
+section form {
+	display: flex;
+	align-items: center;
+	margin-top: 50px;
+}
+
+section form input[type="date"], section form input[type="time"],
+	section form input[type="text"], section form button {
+	font-size: 18px;
+	padding: 10px 20px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-right: 10px;
+}
+
+section form input[type="text"] {
+	font-size: 18px;
+	padding: 12px 20px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-right: 10px;
+}
+
+#reservationTime {
+	font-size: 18px;
+	padding: 14px 20px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin-right: 10px;
+}
+
+section form button {
+	background-color: #006BFD;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+section form button:hover {
+	background-color: #23527c;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: gray;
+}

@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>PMS</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+
+
+	<!-- XML 순서 1. 사용자 2. 클라이언트(사업자) 3.사용자 공통(편의성 관련) 4.장소 관련(spot 포함) 5. 예약 
+		관련 6. 서버 페이지 메뉴(관리자용 구분하지 않았음) 7. 관리자 전용 기능 -->
+	<servlet>
+		<servlet-name>/</servlet-name>
+		<jsp-file>/index.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>/</servlet-name>
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>index_eng</servlet-name>
+		<jsp-file>/index_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>index_eng</servlet-name>
+		<url-pattern>/index_eng</url-pattern>
+	</servlet-mapping>
+	
+
+	<servlet>
+		<servlet-name>Service</servlet-name>
+		<servlet-class>controller.Service</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Service</servlet-name>
+		<url-pattern>/service</url-pattern>
+	</servlet-mapping>
+
+	<servlet> <!-- 예약내역 테스트페이지 -->
+		<servlet-name>bookingInfoAll</servlet-name>
+		<jsp-file>/views/bookingInfoAll.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>bookingInfoAll</servlet-name>
+		<url-pattern>/bookingInfoAll</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- =======================================사용자(User) 관련================================================= -->
+
+	<servlet> <!-- 회원가입 페이지 -->
+		<servlet-name>userRegist</servlet-name>
+		<jsp-file>/views/viewsForUser/userRegist.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userRegist</servlet-name>
+		<url-pattern>/userRegist</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> <!-- 회원가입 페이지 -->
+		<servlet-name>userRegist_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForUser/userRegist_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userRegist_eng</servlet-name>
+		<url-pattern>/userRegist_eng</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet> <!-- 회원삭제 페이지 -->
+		<servlet-name>userDelete</servlet-name>
+		<jsp-file>/views/viewsForUser/userDelete.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userDelete</servlet-name>
+		<url-pattern>/userDelete</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> <!-- 회원삭제 페이지 -->
+		<servlet-name>userDelete_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForUser/userDelete_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userDelete_eng</servlet-name>
+		<url-pattern>/userDelete_eng</url-pattern>
+	</servlet-mapping>
+
+	<servlet> <!-- 회원업데이트 페이지 -->
+		<servlet-name>userUpdate</servlet-name>
+		<jsp-file>/views/viewsForUser/userUpdate.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userUpdate</servlet-name>
+		<url-pattern>/userUpdate</url-pattern>
+	</servlet-mapping>
+	
+	<servlet> <!-- 회원업데이트 페이지 -->
+		<servlet-name>userUpdate_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForUser/userUpdate_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userUpdate_eng</servlet-name>
+		<url-pattern>/userUpdate_eng</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>userLogin</servlet-name>
+		<jsp-file>/views/viewsForUser/userLogin.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userLogin</servlet-name>
+		<url-pattern>/userLogin</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>userLogin_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForUser/userLogin_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userLogin_eng</servlet-name>
+		<url-pattern>/userLogin_eng</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>userMyPage</servlet-name>
+		<jsp-file>/views/viewsForUser/userMyPage.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userMyPage</servlet-name>
+		<url-pattern>/userMyPage</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>userMyPage_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForUser/userMyPage_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userMyPage_eng</servlet-name>
+		<url-pattern>/userMyPage_eng</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>userBookingInform</servlet-name>
+		<jsp-file>/views/viewsForUser/userBookingInform.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userBookingInform</servlet-name>
+		<url-pattern>/userBookingInform</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>userBookingInform_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForUser/userBookingInform_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userBookingInform_eng</servlet-name>
+		<url-pattern>/userBookingInform_eng</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- =======================================사업자(Client) 관련================================================= -->
+
+
+	<servlet> <!-- 사업자 회원가입 페이지 -->
+		<servlet-name>clientRegist</servlet-name>
+		<jsp-file>/views/viewsForClient/clientRegist.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>clientRegist</servlet-name>
+		<url-pattern>/clientRegist</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet> <!-- 사업자 정보수정 페이지 -->
+		<servlet-name>clientUpdate</servlet-name>
+		<jsp-file>/views/viewsForClient/clientUpdate.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>clientUpdate</servlet-name>
+		<url-pattern>/clientUpdate</url-pattern>
+	</servlet-mapping>
+
+	<servlet> <!-- 사업자 삭제 페이지 -->
+		<servlet-name>clientDelete</servlet-name>
+		<jsp-file>/views/viewsForClient/clientDelete.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>clientDelete</servlet-name>
+		<url-pattern>/clientDelete</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>clientDelete</servlet-name>
+		<url-pattern>/clientLeave</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet> <!-- 사업자 영업장 출력 -->
+		<servlet-name>clientPrintLocation</servlet-name>
+		<jsp-file>/views/viewsForClient/clientPrintLocation.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>clientPrintLocation</servlet-name>
+		<url-pattern>/clientPrintLocation</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>clientLogin</servlet-name>
+		<jsp-file>/views/viewsForClient/clientLogin.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>clientLogin</servlet-name>
+		<url-pattern>/clientLogin</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>clientLogin_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForClient/clientLogin_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>clientLogin_eng</servlet-name>
+		<url-pattern>/clientLogin_eng</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>clientMyPage</servlet-name>
+		<jsp-file>/views/viewsForClient/clientMyPage.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>clientMyPage</servlet-name>
+		<url-pattern>/clientMyPage</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
+	<!-- =======================================사용자 공통 편의성 관련================================================= -->
+
+
+	<servlet>
+		<servlet-name>logOut</servlet-name>
+		<servlet-class>controller.action.LogoutAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>logOut</servlet-name>
+		<url-pattern>/logOut</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>searchBooking</servlet-name>
+		<jsp-file>/views/viewsForDefault/searchBooking.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>searchBooking</servlet-name>
+		<url-pattern>/searchBooking</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>searchBooking_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForDefault/searchBooking_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>searchBooking_eng</servlet-name>
+		<url-pattern>/searchBooking_eng</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>findPassword</servlet-name>
+		<jsp-file>/views/viewsForDefault/findPassword.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>findPassword</servlet-name>
+		<url-pattern>/findPassword</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>findId</servlet-name>
+		<jsp-file>/views/viewsForDefault/findId.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>findId</servlet-name>
+		<url-pattern>/findId</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>changePassword</servlet-name>
+		<jsp-file>/views/changePassword.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>changePassword</servlet-name>
+		<url-pattern>/changePassword</url-pattern>
+	</servlet-mapping>
+
+	<!-- =======================================장소 관련================================================= -->
+
+
+	<servlet>
+		<servlet-name>parkingSpotRegist</servlet-name>
+		<jsp-file>/views/viewsForLocation/parkingSpotRegist.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>parkingSpotRegist</servlet-name>
+		<url-pattern>/parkingSpotRegist</url-pattern>
+	</servlet-mapping>
+
+	<servlet> <!-- 주차장 지도위치 보여주는 페이지 -->
+		<servlet-name>view_parking_location</servlet-name>
+		<jsp-file>/views/viewsForLocation/viewParkingLocation.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>view_parking_location</servlet-name>
+		<url-pattern>/view_parking_location</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>locationList</servlet-name>
+		<jsp-file>/views/viewsForLocation/locationList.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>locationList</servlet-name>
+		<url-pattern>/locationList</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>locationList_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForLocation/locationList_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>locationList_eng</servlet-name>
+		<url-pattern>/locationList_eng</url-pattern>
+	</servlet-mapping>
+
+
+
+	<!-- =======================================예약 관련================================================= -->
+
+
+	<servlet>
+		<servlet-name>nonUserBookingForm</servlet-name>
+		<jsp-file>/views/viewsForBooking/nonUserBookingForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>nonUserBookingForm</servlet-name>
+		<url-pattern>/nonUserBookingForm</url-pattern>
+	</servlet-mapping>
+	
+	
+		<servlet>
+		<servlet-name>nonUserBookingList</servlet-name>
+		<jsp-file>/views/viewsForBooking/nonUserBookingList.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>nonUserBookingList</servlet-name>
+		<url-pattern>/nonUserBookingList</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<servlet>
+		<servlet-name>userBookingForm</servlet-name>
+		<jsp-file>/views/viewsForBooking/userBookingForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userBookingForm</servlet-name>
+		<url-pattern>/userBookingForm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>userBookingForm_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForBooking/userBookingForm_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userBookingForm_eng</servlet-name>
+		<url-pattern>/userBookingForm_eng</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- =======================================사이트 관련(관리자 구분 없음)================================================= -->
+
+	<servlet>
+		<servlet-name>header</servlet-name>
+		<jsp-file>/views/viewsForPage/header.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>header</servlet-name>
+		<url-pattern>/header</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>footer</servlet-name>
+		<jsp-file>/views/viewsForPage/footer.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>footer</servlet-name>
+		<url-pattern>/footer</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>header_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForPage/header_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>header_eng</servlet-name>
+		<url-pattern>/header_eng</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>footer_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForPage/footer_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>footer_eng</servlet-name>
+		<url-pattern>/footer_eng</url-pattern>
+	</servlet-mapping>
+
+
+
+	<!-- 이용안내 -->
+	<servlet>
+		<servlet-name>information</servlet-name>
+		<jsp-file>/views/viewsForPage/information.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>information</servlet-name>
+		<url-pattern>/information</url-pattern>
+	</servlet-mapping>
+
+	<!-- 개인정보퍼리 -->
+	<servlet>
+		<servlet-name>privacypolicy</servlet-name>
+		<jsp-file>/views/viewsForPage/privacypolicy.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>privacypolicy</servlet-name>
+		<url-pattern>/privacypolicy</url-pattern>
+	</servlet-mapping>
+
+	<!-- 공지사항 -->
+	<servlet>
+		<servlet-name>notice</servlet-name>
+		<jsp-file>/views/viewsForPage/notice.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>notice</servlet-name>
+		<url-pattern>/notice</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>noticeDetail</servlet-name>
+		<jsp-file>/views/viewsForPage/noticeDetail.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>noticeDetail</servlet-name>
+		<url-pattern>/noticeDetail</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>noticeUpdate</servlet-name>
+		<jsp-file>/views/viewsForPage/noticeUpdate.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>noticeUpdate</servlet-name>
+		<url-pattern>/noticeUpdate</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>board</servlet-name>
+		<jsp-file>/views/viewsForPage/board.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>board</servlet-name>
+		<url-pattern>/board</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>board_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForPage/board_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>board_eng</servlet-name>
+		<url-pattern>/board_eng</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>boardDetail</servlet-name>
+		<jsp-file>/views/viewsForPage/boardDetail.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardDetail</servlet-name>
+		<url-pattern>/boardDetail</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>boardDetail_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForPage/boardDetail_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardDetail_eng</servlet-name>
+		<url-pattern>/boardDetail_eng</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>boardWrite</servlet-name>
+		<jsp-file>/views/viewsForPage/boardWrite.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardWrite</servlet-name>
+		<url-pattern>/boardWrite</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>boardWrite_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForPage/boardWrite_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardWrite_eng</servlet-name>
+		<url-pattern>/boardWrite_eng</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>boardList</servlet-name>
+		<jsp-file>/views/viewsForPage/boardList.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardList</servlet-name>
+		<url-pattern>/boardList</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>boardList_eng</servlet-name>
+		<jsp-file>/views_eng/viewsForPage/boardList_eng.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardList_eng</servlet-name>
+		<url-pattern>/boardList_eng</url-pattern>
+	</servlet-mapping>
+	<!-- =======================================관리자(admin) 관련================================================= -->
+
+	<servlet> <!-- 회원 전체 출력 페이지 -->
+		<servlet-name>userList</servlet-name>
+		<jsp-file>/views/viewsForAdmin/userList.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userList</servlet-name>
+		<url-pattern>/userList</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet> <!-- 사업자 전체 출력 페이지 -->
+		<servlet-name>clientList</servlet-name>
+		<jsp-file>/views/viewsForAdmin/clientList.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>clientList</servlet-name>
+		<url-pattern>/clientList</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>adminHeader</servlet-name>
+		<jsp-file>/views/viewsForAdmin/adminHeader.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminHeader</servlet-name>
+		<url-pattern>/adminHeader</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<servlet-name>admin</servlet-name>
+		<jsp-file>/views/viewsForAdmin/admin.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>admin</servlet-name>
+		<url-pattern>/admin</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>adminPage</servlet-name>
+		<jsp-file>/views/viewsForAdmin/adminPage.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminPage</servlet-name>
+		<url-pattern>/adminPage</url-pattern>
+	</servlet-mapping>
+
+	<servlet> <!-- 회원업데이트 페이지 -->
+		<servlet-name>userUpdateForAdmin</servlet-name>
+		<jsp-file>/views/viewsForAdmin/userUpdateForAdmin.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userUpdateForAdmin</servlet-name>
+		<url-pattern>/userUpdateForAdmin</url-pattern>
+	</servlet-mapping>
+	<servlet> <!-- 사업자 업데이트 페이지 -->
+		<servlet-name>clientUpdateForAdmin</servlet-name>
+		<jsp-file>/views/viewsForAdmin/clientUpdateForAdmin.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>clientUpdateForAdmin</servlet-name>
+		<url-pattern>/clientUpdateForAdmin</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+</web-app>
